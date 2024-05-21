@@ -10,18 +10,66 @@ import queue
 
 # Configuration
 GROUPS = {
-    "footstep-barefoot": ["footstep-barefoot-grass-walk", "footstep-barefoot-forest-walk", "footstep-barefoot-sand-walk", "footstep-barefoot-dirt-walk", "footstep-barefoot-gravel-walk", "footstep-barefoot-concrete-walk", "footstep-barefoot-concrete-jump-land", "footstep-barefoot-wood-walk", "footstep-barefoot-metal-jump-land", "footstep-barefoot-dirt-jump-land", "footstep-barefoot-metal-walk", "footstep-barefoot-grass-jump-land", "footstep-barefoot-sand-jump-land"],
-    "boar-footstep": ["boar-footstep-dirt", "boar-footstep-grass"]
-    # Add more groups as needed
+    #Footsteps
+    "footstep-barefoot": ["footstep-barefoot-sand-walk", "footstep-barefoot-grass-walk", "footstep-barefoot-grass-jump-start", "footstep-barefoot-grass-jump-land", "footstep-barefoot-sand-jump-start", "footstep-barefoot-wood-jump-land", "footstep-barefoot-wood-walk", "footstep-barefoot-metal-jump-land", "footstep-barefoot-metal-walk", "footstep-barefoot-metal-jump-start", "footstep-barefoot-sand-jump-land", "footstep-barefoot-concrete-walk", "footstep-barefoot-wood-jump-start", "footstep-barefoot-concrete-jump-land", "footstep-barefoot-concrete-jump-start", "footstep-barefoot-stones-jump-start", "footstep-barefoot-stones-walk", "footstep-barefoot-stones-jump-land", "footstep-barefoot-gravel-jump-land", "footstep-barefoot-cloth-jump-start"],
+    "footstep-hide": ["footstep-hide-wood-walk", "footstep-hide-wood-jump-start", "footstep-hide-wood-jump-land", "footstep-hide-metal-walk", "footstep-hide-metal-jump-start", "footstep-hide-metal-jump-land", "footstep-hide-concrete-jump-start", "footstep-hide-concrete-walk", "footstep-hide-concrete-jump-land", "footstep-hide-grass-walk", "footstep-hide-sand-walk", "footstep-hide-grass-jump-start", "footstep-hide-grass-jump-land", "footstep-hide-sand-jump-land", "footstep-hide-sand-jump-start", "footstep-hide-gravel-walk", "footstep-hide-stones-jump-land", "footstep-hide-stones-jump-start"],
+    "footstep-boots": ["footstep-boots-metal-walk", "footstep-boots-metal-jump-start", "footstep-boots-metal-jump-land", "footstep-boots-concrete-walk", "footstep-boots-concrete-jump-start", "footstep-boots-concrete-jump-land", "footstep-boots-wood-walk", "footstep-boots-wood-jump-start", "footstep-boots-wood-jump-land", "footstep-boots-sand-walk", "footstep-boots-grass-walk", "footstep-boots-grass-jump-land", "footstep-boots-grass-jump-start", "footstep-boots-sand-jump-land", "footstep-boots-sand-jump-start", "footstep-boots-stones-jump-land", "footstep-boots-stones-walk", "footstep-boots-stones-jump-start", "footstep-boots-gravel-jump-land", "footstep-boots-gravel-jump-start"],
+    "footstep-burlap": ["footstep-burlap-wood-walk", "footstep-burlap-wood-jump-start", "footstep-burlap-wood-jump-land", "footstep-burlap-metal-walk", "footstep-burlap-metal-jump-start", "footstep-burlap-metal-jump-land", "footstep-burlap-concrete-jump-start", "footstep-burlap-concrete-jump-land", "footstep-burlap-concrete-walk", "footstep-burlap-grass-walk", "footstep-burlap-sand-walk", "footstep-burlap-grass-jump-land", "footstep-burlap-grass-jump-start", "footstep-burlap-sand-jump-land", "footstep-burlap-sand-jump-start", "footstep-burlap-stones-walk", "footstep-burlap-gravel-walk", "footstep-burlap-stones-jump-land", "footstep-burlap-stones-jump-start"],
+    "footstep-rubber": ["footstep-rubber-boots-metal-walk", "footstep-rubber-boots-metal-jump-land", "footstep-rubber-boots-metal-jump-start", "footstep-rubber-boots-concrete-jump-land", "footstep-rubber-boots-concrete-walk", "footstep-rubber-boots-concrete-jump-start", "footstep-rubber-boots-wood-walk", "footstep-rubber-boots-wood-jump-start", "footstep-rubber-boots-wood-jump-land", "footstep-rubber-boots-sand-walk", "footstep-rubber-boots-grass-walk", "footstep-rubber-boots-grass-jump-land", "footstep-rubber-boots-grass-jump-start", "footstep-rubber-boots-sand-jump-land", "footstep-rubber-boots-sand-jump-start", "footstep-rubber-boots-stones-jump-land", "footstep-rubber-boots-stones-walk", "footstep-rubber-boots-gravel-walk", "footstep-rubber-boots-gravel-jump-start", "footstep-rubber-boots-stones-jump-start"],
+    #Tools
+    "hatchet": ["hatchet-deploy", "hatchet-attack", "lumberjack-axe-attack", "lumberjack-axe-impact"],
+    "hatchet-stone": ["concrete-axe-attack", "concrete-axe-impact", "hatchet-stone-strike-soft", "hatchet-stone-strike"],
+    "pickaxe": ["concrete-pick-impact", "lumberjack-pick-attack, lumberjack-pick-impact", "pickaxe-deploy", "pickaxe-attack", "pickaxe-strike", "diver-pickaxe-deploy", "diver-pickaxe-attack"],
+    "salvaged-axe": ["salvaged-axe-deploy", "salvaged-axe-attack", "salvaged-axe-strike"],
+    "salvaged-icepick": ["salvaged-icepick-deploy", "salvaged-icepick-hand-tap", "salvaged-icepick-attack", "salvaged-icepick-strike"],
+    "torch": ["skull-torch-burn-loop", "skull-torch-deploy", "skull-torch-attack", "skull-torch-strike", "torch-strike", "diver-torch-deploy", "diver-torch-attack", "diver-torch-strike"],
+    "chainsaw": ["chainsaw-pull-chain", "chainsaw-unscrew-gascap", "chainsaw-fill-gas", "chainsaw-idle", "chainsaw-hit-metal", "chainsaw-rev-up", "chainsaw-active", "chainsaw-rev-down", "chainsaw-engine-off"],
+    "salvaged-hammer": ["salvaged-hammer-deploy", "salvaged-hammer-attack", "salvaged-hammer-strike"],
+    "shovel": ["shovel-deploy", "shovel-strike"],
+    "paddle": ["paddle-strike"],
+    "metal-detector": ["metal-detector-deploy", "metal-detector-lower", "metal-detector-swing", "metal-detector-raise"],
+    "c4": ["c4-explosion", "c4-beep-loop", "c4-deploy"],
+    "survey-charge": ["survey-charge-deploy", "survey-charge-fuse-loop", "survey-charge-stick"],
+    "flare": ["flare-deploy", "flare-ignite", "flare-throw", "flare-burn-loop"],
+    #Generic sounds
+    "fire": ["campfire-burning", "mlrs-damaged-fire-loop", "large-fire-loop", "ignite"],
+    "phys-impact": ["phys-impact-wood", "phys-impact-tool", "phys-impact-metal-medium-rattley", "phys-impact-plastic", "phys-impact-bone"],
+    "throw-item": ["throw-item-small"],
+    #Interactable objects
+    "recycle": ["grinding_loop", "recycler-open", "recycle-start", "recycler-close", "recycle-stop"],
 }
 ICONS = {
+    #Footsteps
     "footstep-barefoot": "footstep-barefoot.png",
-    "boar-footstep": "boar-footstep.png",
-    # Add more mappings as needed
+    "footstep-hide": "footstep-hide.png",
+    "footstep-boots": "footstep-boots.png",
+    "footstep-burlap": "footstep-burlap.png",
+    "footstep-rubber": "footstep-rubber.png",
+    #Tools
+    "hatchet": "hatchet.png",
+    "hatchet-stone": "hatchet-stone.png",
+    "pickaxe": "pickaxe.png",
+    "salvaged-axe": "salvaged-axe.png",
+    "salvaged-icepick": "salvaged-icepick.png",
+    "torch": "torch.png",
+    "chainsaw": "chainsaw.png",
+    "salvaged-hammer": "salvaged-hammer.png",
+    "shovel": "shovel.png",
+    "paddle": "paddle.png",
+    "metal-detector": "metal-detector.png",
+    "c4": "c4.png",
+    "survey-charge": "survey-charge.png",
+    "flare": "flare.png",
+    #Generic sounds
+    "fire": "fire.png",
+    "phys-impact": "phys-impact.png",
+    "throw-item": "throw-item.png",
+    #Interactable objects
+    "recycle": "recycle.png",
 }
 
-IMAGE_SIZE = (75, 75)  # Resize images to 30x30 pixels
-PADDING_LEFT = 0.1  # 10% padding on the left
+IMAGE_SIZE = (75, 75)
+PADDING_LEFT = 0.1
 
 active_groups = {group: True for group in GROUPS}
 active_items = {item: True for group in GROUPS for item in GROUPS[group]}
@@ -106,7 +154,7 @@ class ImageFlasherApp:
         overlay = tk.Toplevel(self.root)
         overlay.overrideredirect(True)
         overlay.attributes("-topmost", True)
-        overlay.attributes("-alpha", 1.0)  # Start fully opaque
+        overlay.attributes("-alpha", 1.0)
 
         # Set the window background to be transparent
         overlay.config(bg='white')
@@ -121,7 +169,7 @@ class ImageFlasherApp:
             print(f"Loading icon: {icon_file}")  # Debug statement
             try:
                 icon = Image.open(icon_file)
-                icon = icon.resize(IMAGE_SIZE, Image.ANTIALIAS)  # Resize image
+                icon = icon.resize(IMAGE_SIZE, Image.ANTIALIAS)
                 icon = ImageTk.PhotoImage(icon)
                 self.images.append(icon)  # Keep a reference to avoid garbage collection
                 icon_label = tk.Label(frame, image=icon, bg='white')
