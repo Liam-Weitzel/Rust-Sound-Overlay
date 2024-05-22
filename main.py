@@ -26,17 +26,52 @@ GROUPS = {
     "chainsaw": ["chainsaw-pull-chain", "chainsaw-unscrew-gascap", "chainsaw-fill-gas", "chainsaw-idle", "chainsaw-hit-metal", "chainsaw-rev-up", "chainsaw-active", "chainsaw-rev-down", "chainsaw-engine-off"],
     "salvaged-hammer": ["salvaged-hammer-deploy", "salvaged-hammer-attack", "salvaged-hammer-strike"],
     "shovel": ["shovel-deploy", "shovel-strike"],
-    "paddle": ["paddle-strike"],
     "metal-detector": ["metal-detector-deploy", "metal-detector-lower", "metal-detector-swing", "metal-detector-raise"],
     "c4": ["c4-explosion", "c4-beep-loop", "c4-deploy"],
     "survey-charge": ["survey-charge-deploy", "survey-charge-fuse-loop", "survey-charge-stick"],
     "flare": ["flare-deploy", "flare-ignite", "flare-throw", "flare-burn-loop"],
-    #Generic sounds
-    "fire": ["campfire-burning", "mlrs-damaged-fire-loop", "large-fire-loop", "ignite"],
-    "phys-impact": ["phys-impact-wood", "phys-impact-tool", "phys-impact-metal-medium-rattley", "phys-impact-plastic", "phys-impact-bone"],
-    "throw-item": ["throw-item-small"],
-    #Interactable objects
-    "recycle": ["grinding_loop", "recycler-open", "recycle-start", "recycler-close", "recycle-stop"],
+    #Weapons
+    "bow": ["bow-arrow-flight", "bow-deploy", "bow-draw", "bow-attack"],
+    "compound-bow": ["compound-bow-deploy", "compound-bow-reload-start", "compound-bow-place-arrow", "compound-bow-initial-pullback", "compound-bow-charge-up", "compound-bow-charge-up-complete", "compound-bow-held-stress-loop", "compound-bow-attack"],
+    "machete": ["machete-deploy", "machete-attack", "machete-strike-soft"],
+    "military-flamethrower": ["military-flamethrower-deploy", "military-flamethrower-attack-start", "military-flamethrower-attack-loop", "military-flamethrower-attack-stop"],
+    "flamethrower": ["flamethrower-pilot-loop", "flamethrower-deploy", "flamethrower-valve_open", "flamethrower-fire-start", "flamethrower-fire-loop", "flamethrower-fire-stop"],
+    "minigun": ["minigun-deploy", "minigun-motor-loop-unpitched", "minigun-motor-start", "minigun-motor-loop-pitched", "minigun-gunshot-body-loop", "minigun-gunshot-body-start", "minigun-gunshot-LFE-loop", "minigun-gunshot-LFE-start", "minigun-gunshot-mech-loop", "minigun-gunshot-body-tail", "minigun-gunshot-LFE-tail", "minigun-gunshot-mech-tail", "minigun-motor-release"],
+    "molotov": ["molotov-cocktail-deploy", "molotov-cocktail-ignite", "molotov-cocktail-ignite-finish", "molotov-cocktail-throw", "molotov-cocktail-explosion", "molotov-cocktail-fireball-burn-loop"],
+    "mp5": ["mp5-gunshot-body-suppressed", "mp5-gunshot-mech-suppressed", "mp5-deploy", "mp5-bolt-back", "mp5-bolt-shut", "mp5-gunshot-body", "mp5-gunshot-LFE", "mp5-gunshot-mech", "mp5-gunshot-tail-outdoor"],
+    "grenade-launcher": ["grenade-launcher-deploy", "grenade-launcher-reload-start", "grenade-launcher-reload-single-start", "grenade-launcher-reload-single-spin", "grenade-launcher-reload-single-insert", "grenade-launcher-reload-end", "grenade-launcher-attack", "grenade-launcher-explosion"],
+    "spas12": ["spas12-gunshot-body-suppressed", "spas12-deploy", "spas12-pump_back", "spas12-pump_forward", "spas12-gunshot-body", "spas12-gunshot-LFE", "spas12-gunshot-mech", "spas12-gunshot-tail-outdoor"],
+    "lr300": ["lr300-deploy", "lr300-charging-handle-back", "lr300-charging-handle-shut", "lr300-gunshot-body", "lr300-gunshot-LFE", "lr300-gunshot-mech", "lr300-gunshot-tail-outdoor"],
+    "ak47": ["ak74u-deploy", "ak74u-bolt-back", "ak74u-bolt-forward", "ak47-gunshot-body", "ak47-gunshot-tail-outdoor", "ak47-gunshot-LFE", "ak47-gunshot-mech", "ak47-gunshot-body-suppressed"],
+    "m249": ["m249-gunshot-body-suppressed", "m249-deploy", "m249-chainbelt", "m249-gunshot-body", "m249-gunshot-LFE", "m249-gunshot-mech", "m249-gunshot-tail-outdoor"],
+    "m39": ["m39-gunshot-body-suppressed", "m39-deploy", "m39-gunshot-body", "m39-gunshot-LFE", "m39-gunshot-mech", "m39-gunshot-tail-outdoor"],
+    "m4": ["m4-shotgun-gunshot-LFE-suppressed", "m4-shotgun-deploy", "m4-shotgun-gunshot-body", "m4-shotgun-gunshot-LFE", "m4-shotgun-gunshot-mech", "m4-shotgun-gunshot-tail-outdoor"],
+    "m92": ["m92-gunshot-body-suppressed", "m92-deploy", "m92-safety-off", "m92-gunshot-body", "m92-gunshot-LFE", "m92-gunshot-mech", "m92-gunshot-tail-outdoor"],
+    "2handed-mace": ["2handed-mace-deploy", "2handed-mace-attack", "2handed-mace-strike"],
+    "hmlmg": ["hmlmg-gunshot-body-suppressed", "hmlmg-deploy-02-start-01", "hmlmg-deploy-02-finish-01", "hmlmg-gunshot-body", "hmlmg-gunshot-tail-outdoor", "hmlmg-gunshot-mech", "hmlmg-gunshot-LFE"],
+    "homing-missile-launcher": ["homing-missile-launcher-deploy-start", "homing-missile-launcher-deploy-camera", "homing-missile-launcher-deploy-finish", "homing-missile-launcher-reload-start", "homing-missile-launcher-reload-insert-rocket", "homing-missile-launcher-reload-finish"],
+    "2handed-sword": ["2handed-sword-deploy", "2handed-sword-attack", "2handed-sword-strike-soft", "2handed-sword-strike"],
+    "l96": ["l96-gunshot-LFE-suppressed", "l96-gunshot-body-suppressed", "l96-deploy", "l96-gunshot-body", "l96-gunshot-LFE", "l96-gunshot-mech", "l96-gunshot-tail-outdoor", "l96-bolt-start", "l96-bolt-grab", "l96-bolt-action", "l96-bolt-finish"],
+    "crossbow": ["crossbow-reload", "crossbow-attack"],
+    "custom-smg": ["smg-deploy", "smg-bolt_back", "smg-bolt_shut", "custom-smg-gunshot-body-suppressed", "custom-smg-gunshot-body", "custom-smg-gunshot-tail-outdoor", "custom-smg-gunshot-LFE", "custom-smg-gunshot-mech"],
+    "double-shotgun": ["doubleshotgun-deploy", "double-shotgun-gunshot-body", "double-shotgun-gunshot-LFE", "double-shotgun-gunshot-mech", "double-shotgun-gunshot-tail-outdoor"],
+    "eoka-pistol": ["eoka-pistol-deploy", "eoka-pistol-flint-strike", "eoka-pistol-gunshot-body", "eoka-pistol-gunshot-LFE", "eoka-pistol-gunshot-mech", "eoka-pistol-gunshot-tail-outdoor"],
+    "f1-grenade": ["f1-grenade-deploy", "f1-grenade-pull-pin", "f1-grenade-explosion"],
+    "nailgun": ["nailgun-deploy", "nailgun-attack"],
+    "paddle": ["paddle-deploy", "paddle-attack-start", "paddle-attack-whoosh", "paddle-strike-soft", "paddle-strike"],
+    "spear": ["spear-2hand-deploy", "spear-attack", "spear-strike-soft", "spear-strike"],
+    "glock": ["glock-gunshot-body-suppressed", "glock-deploy", "glock-gunshot-body", "glock-gunshot-LFE", "glock-gunshot-mech", "glock-gunshot-tail-outdoor"],
+    "sawnoff-shotgun": ["sawnoff-shotgun-gunshot-body-suppressed", "sawnoff-shotgun-deploy", "sawnoff-shotgun-gunshot-body", "sawnoff-shotgun-gunshot-LFE", "sawnoff-shotgun-gunshot-mech", "sawnoff-shotgun-gunshot-tail-outdoor", "sawnoff-shotgun-pumpaction"],
+    "python": ["python-deploy", "python-gunshot-body", "python-gunshot-LFE", "python-gunshot-mech", "python-gunshot-tail-outdoor"],
+    "waterpipe": ["waterpipe-shotgun-deploy", "waterpipe-shotgun-gunshot-body", "waterpipe-shotgun-gunshot-LFE", "waterpipe-shotgun-gunshot-mech", "waterpipe-shotgun-gunshot-tail-outdoor"],
+    "thompson": ["thompson-gunshot-body-suppressed", "thompson-deploy", "thompson-safety-off", "thompson-gunshot-body", "thompson-gunshot-LFE", "thompson-gunshot-mech", "thompson-gunshot-tail-outdoor", "thompson-dryfire"],
+    "revolver": ["revolver-gunshot-body-suppressed", "revolver-deploy", "revolver-dryfire", "revolver-gunshot-body", "revolver-gunshot-LFE", "revolver-gunshot-mech", "revolver-gunshot-tail-outdoor"],
+    "semi-auto-pistol": ["semi-auto-pistol-gunshot-body-suppressed", "semi-auto-pistol-gunshot-body", "semi-auto-pistol-gunshot-LFE", "semi-auto-pistol-gunshot-mech", "semi-auto-pistol-gunshot-tail-outdoor"],
+    "semi-auto-rifle": ["semi-auto-rifle-gunshot-body-suppressed", "sar-deploy", "sar-deploy_grab_forearm", "semi-auto-rifle-gunshot-body", "semi-auto-rifle-gunshot-LFE", "semi-auto-rifle-gunshot-mech", "semi-auto-rifle-gunshot-tail-outdoor"],
+    "2handed-cleaver": ["2handed-cleaver-deploy", "2handed-cleaver-attack", "2handed-cleaver-strike-soft"],
+    "sword": ["sword-deploy", "sword-attack", "sword-strike-soft"],
+    "rocket-launcher": ["rocket-launcher-deploy", "rocket-launcher-reload-start", "rocket-launcher-reload-open-hatch", "rocket-launcher-reload-insert-rocket", "rocket-launcher-reload-close-hatch", "rocket-launcher-reload-finish", "rocketlauncher_attack", "rocket_engine"],
+    "bolt-rifle": ["bolt-rifle-gunshot-body-suppressed", "bolt-rifle-deploy", "bolt-rifle-gunshot-body", "bolt-rifle-gunshot-LFE", "bolt-rifle-gunshot-tail-outdoor", "bolt-rifle-bolt-jack", "bolt-rifle-eject-shell", "bolt-rifle-bolt-forward"],
 }
 ICONS = {
     #Footsteps
@@ -55,21 +90,57 @@ ICONS = {
     "chainsaw": "chainsaw.png",
     "salvaged-hammer": "salvaged-hammer.png",
     "shovel": "shovel.png",
-    "paddle": "paddle.png",
     "metal-detector": "metal-detector.png",
     "c4": "c4.png",
     "survey-charge": "survey-charge.png",
     "flare": "flare.png",
-    #Generic sounds
-    "fire": "fire.png",
-    "phys-impact": "phys-impact.png",
-    "throw-item": "throw-item.png",
-    #Interactable objects
-    "recycle": "recycle.png",
+    #Weapons
+    "bow": "bow.png",
+    "compound-bow": "compound-bow.png",
+    "machete": "machete.png",
+    "military-flamethrower": "military-flamethrower.png",
+    "flamethrower": "flamethrower.png",
+    "minigun": "minigun.png",
+    "molotov": "molotov.png",
+    "mp5": "mp5.png",
+    "grenade-launcher": "grenade-launcher.png",
+    "spas12": "spas12.png",
+    "lr300": "lr300.png",
+    "m249": "m249.png",
+    "m39": "m39.png",
+    "m4": "m4.png",
+    "m92": "m92.png",
+    "2handed-mace": "2handed-mace.png",
+    "hmlmg": "hmlmg.png",
+    "homing-missile-launcher": "homing-missile-launcher.png",
+    "2handed-sword": "2handed-sword.png",
+    "l96": "l96.png",
+    "crossbow": "crossbow.png",
+    "custom-smg": "custom-smg.png",
+    "double-shotgun": "double-shotgun.png",
+    "eoka-pistol": "eoka-pistol.png",
+    "f1-grenade": "f1-grenade.png",
+    "nailgun": "nailgun.png",
+    "paddle": "paddle.png",
+    "spear": "spear.png",
+    "glock": "glock.png",
+    "sawnoff-shotgun": "sawnoff-shotgun.png",
+    "python": "python.png",
+    "waterpipe": "waterpipe.png",
+    "thompson": "thompson.png",
+    "revolver": "revolver.png",
+    "semi-auto-pistol": "semi-auto-pistol",
+    "semi-auto-rifle": "semi-auto-rifle.png",
+    "2handed-cleaver": "2handed-cleaver.png",
+    "sword": "sword.png",
+    "rocket-launcher": "rocket-launcher.png",
+    "bolt-rifle": "bolt-rifle.png",
+    "ak47": "ak47.png"
 }
 
 IMAGE_SIZE = (75, 75)
 PADDING_LEFT = 0.1
+MAX_ITEMS_PER_COLUMN = 10
 
 active_groups = {group: True for group in GROUPS}
 active_items = {item: True for group in GROUPS for item in GROUPS[group]}
@@ -97,9 +168,14 @@ class ImageFlasherApp:
 
         self.group_vars = {}
 
+        row, column = 0, 0
         for group, items in GROUPS.items():
+            if row >= MAX_ITEMS_PER_COLUMN:
+                row = 0
+                column += 1
+            
             frame = tk.Frame(root)
-            frame.pack(anchor="w")
+            frame.grid(row=row, column=column, padx=5, pady=5, sticky="w")
 
             var = tk.BooleanVar(value=True)
             chk = tk.Checkbutton(frame, text=group, variable=var, command=lambda g=group: self.toggle_group(g))
@@ -108,16 +184,17 @@ class ImageFlasherApp:
 
             btn = tk.Button(frame, text="Select Items", command=lambda g=group, i=items: self.open_item_selector(g, i))
             btn.pack(side="left")
+            row += 1
 
         self.clear_clipboard_var = tk.BooleanVar(value=False)
         self.clear_clipboard_chk = tk.Checkbutton(root, text="Clear Clipboard after displaying", variable=self.clear_clipboard_var)
-        self.clear_clipboard_chk.pack(anchor="w")
+        self.clear_clipboard_chk.grid(row=row, column=0, columnspan=2, pady=10, sticky="w")
 
         self.start_btn = tk.Button(root, text="Start Monitoring", command=self.start_monitoring)
-        self.start_btn.pack(pady=10)
+        self.start_btn.grid(row=row + 1, column=0, columnspan=2, pady=10)
 
         self.stop_btn = tk.Button(root, text="Stop Monitoring", command=self.stop_monitoring)
-        self.stop_btn.pack(pady=10)
+        self.stop_btn.grid(row=row + 2, column=0, columnspan=2, pady=10)
 
         root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
